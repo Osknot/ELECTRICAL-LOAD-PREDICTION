@@ -9,7 +9,7 @@ import streamlit as st
 from xgboost import XGBRegressor
 
 
-ARTIFACT_DIR = "ui_artifacts"
+ARTIFACT_DIR = os.path.join("Notebooks", "ui_artifacts")
 
 
 @st.cache_resource
