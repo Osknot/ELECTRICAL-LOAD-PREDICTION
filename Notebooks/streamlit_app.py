@@ -119,7 +119,7 @@ def compute_lags_from_history(timestamp_str: str, history_df: pd.DataFrame):
 
 
 def main():
-    st.title("Electrical Energetics Project\nSmart Grid Load Prediction\n Built by Iniobong Oscar Ebong and Libera Mervin Ninziza")
+    st.title("Electrical Energetics Project\nSmart Grid Load Prediction\nBuilt by Iniobong Oscar Ebong and Libera Mervin Ninziza")
 
     if not os.path.exists(ARTIFACT_DIR):
         st.error(
