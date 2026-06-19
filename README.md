@@ -112,9 +112,10 @@ The application saves its internal states using structured JSON files and a nati
 2. **Automated Batch Processing:** Engineers upload recent grid history data streams. The application automatically builds out the required historical lagging features (`lag_1`, `lag_24`, and `rolling_mean_3`) on-the-fly without exposing the pipeline to lookahead bias.
 
 ### Interface Previews
-![Streamlit App Interface - Input Controls](images/Screenshot%202026-06-19%20at%208.23.21.png)
 
-![Streamlit App Interface - Results Analysis](images/Screenshot%202026-06-19%20at%208.23.53.png)
+![Input Controls](./images/input_controls.png)
+
+![Results Analysis](./images/result_analysis.png)
 
 ---
 
