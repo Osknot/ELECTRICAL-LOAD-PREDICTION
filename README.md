@@ -39,15 +39,7 @@ Where:
 - **Base Load ($\beta_0$):** Set statically at $30,000\text{ MW}$ to represent the continuous baseline structural demand of the balancing authority.
 - **Daily Cyclical Demand ($f_{\text{daily}}$):** Modeled using a 24-hour sinusoidal harmonic component:
   $$f_{\text{daily}}(t) = 5000 \cdot \sin\left(\frac{2\pi \cdot \text{hour}_t}{24}\right)$$
-- **Seasonal Macro Trend ($f_{\mathrm{seasonal}}$):** Modeled via an annual wave tracking climate-driven consumption swings:
-
-$$
-f_{\mathrm{seasonal}}(t)
-=
-3000 \cdot \sin\left(\frac{2\pi \cdot d}{365}\right)
-$$
-
-where \(d\) is the day of the year.
+- **Seasonal Macro Trend ($f_{\mathrm{seasonal}}$):** Modeled via an annual wave tracking climate-driven consumption swings.
 
 - **Stochastic Noise ($\epsilon_t$):** Gaussian white noise introduced to simulate irregular load spikes and metered error variance:
   $$\epsilon_t \sim \mathcal{N}(0, 1000^2)$$
