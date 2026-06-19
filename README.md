@@ -86,7 +86,7 @@ The dataset is partitioned chronologically (70% Train / 15% Validation / 15% Tes
 
 Rather than relying on basic defaults, the system deploys an implementation optimized for stability and regularized generalization:
 
-````python
+```python
 xgb_model = XGBRegressor(
     n_estimators=5000,          # High budget for fine-grained convergence
     learning_rate=0.05,         # Conservative step-size shrinkage to prevent overshooting
@@ -98,16 +98,19 @@ xgb_model = XGBRegressor(
     tree_method="hist",         # Histogram-based binning for structural training speedups
     early_stopping_rounds=200   # Halts training when validation loss stalls for 200 epochs
 )
+```
 
 ---
 
 ## 🖥️ Production Inference & Streamlit Web App
 
 The application saves its internal states using structured JSON files and a native weights matrix, ensuring clear decoupling from the training environment:
-* `xgb_load_model.json`: Complete gradient boosting ensemble pathway graph.
-* `train_medians.csv`: Pure median constants extracted from the training split to enforce deterministic imputations during production feature generation.
+
+- `xgb_load_model.json`: Complete gradient boosting ensemble pathway graph.
+- `train_medians.csv`: Pure median constants extracted from the training split to enforce deterministic imputations during production feature generation.
 
 ### Streamlit Inference Modes:
+
 1. **Manual Entry Framework:** Operators specify arbitrary localized environmental values. If historical variables are unknown, the system safely triggers an alert and uses training dataset medians.
 2. **Automated Batch Processing:** Engineers upload recent grid history data streams. The application automatically builds out the required historical lagging features (`lag_1`, `lag_24`, and `rolling_mean_3`) on-the-fly without exposing the pipeline to lookahead bias.
 
@@ -122,9 +125,10 @@ The application saves its internal states using structured JSON files and a nati
 ## 🚀 Execution Guide
 
 ### 1. Clone & Initialize Environment
+
 ```bash
-git clone [https://github.com/Osknot/ELECTRICAL-LOAD-PREDICTION.git](https://github.com/Osknot/ELECTRICAL-LOAD-PREDICTION.git)
+git clone https://github.com/Osknot/ELECTRICAL-LOAD-PREDICTION.git
 cd smart-grid-load-prediction
 python -m venv venv
 source venv/bin/activate  # On Windows use: venv\Scripts\activate
-````
+```
