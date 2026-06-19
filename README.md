@@ -4,7 +4,7 @@ An end-to-end, production-grade Machine Learning architecture designed to foreca
 
 This repository contains the complete pipeline: from synthetic telemetry simulation based on mathematical wave functions, through a leakage-free validation framework, to an interactive Streamlit application optimized for real-time inference.
 
-🔗 **Live Deployment URL:** [Explore the Live Web App Here](https://YOUR-STREAMLIT-APP-URL-HERE.streamlit.app)
+🔗 **Live Deployment URL:** [Explore the Live Web App Here](https://electrical-load-prediction.streamlit.app/)
 
 ---
 
@@ -40,7 +40,7 @@ Where:
 - **Daily Cyclical Demand ($f_{\text{daily}}$):** Modeled using a 24-hour sinusoidal harmonic component:
   $$f_{\text{daily}}(t) = 5000 \cdot \sin\left(\frac{2\pi \cdot \text{hour}_t}{24}\right)$$
 - **Seasonal Macro Trend ($f_{\text{seasonal}}$):** Modeled via an annual wave tracking climate-driven consumption swings:
-  $$f_{\text{seasonal}}(t) = 3000 \cdot \sin\left(\frac{2\pi \cdot \text{day\_of\_year}_t}{365}\right)$$
+  $$f_{\text{seasonal}}(t) = 3000 \cdot \sin\left(\frac{2\pi \cdot \text{day\_of\_year}}{365}\right)$$
 - **Stochastic Noise ($\epsilon_t$):** Gaussian white noise introduced to simulate irregular load spikes and metered error variance:
   $$\epsilon_t \sim \mathcal{N}(0, 1000^2)$$
 
@@ -112,9 +112,9 @@ The application saves its internal states using structured JSON files and a nati
 2. **Automated Batch Processing:** Engineers upload recent grid history data streams. The application automatically builds out the required historical lagging features (`lag_1`, `lag_24`, and `rolling_mean_3`) on-the-fly without exposing the pipeline to lookahead bias.
 
 ### Interface Previews
-![Streamlit App Interface - Input Controls](Screenshot%202026-06-19%20at%208.23.21.png)
+![Streamlit App Interface - Input Controls](images/Screenshot%202026-06-19%20at%208.23.21.png)
 
-![Streamlit App Interface - Results Analysis](Screenshot%202026-06-19%20at%208.23.53.png)
+![Streamlit App Interface - Results Analysis](images/Screenshot%202026-06-19%20at%208.23.53.png)
 
 ---
 
